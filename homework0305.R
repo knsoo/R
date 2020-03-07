@@ -181,8 +181,9 @@ midwest_new$ratio <- midwest_new$asian/midwest_new$total*100
 midwest_new$ration
 hist(midwest_new$ratio)
 mean(midwest_new$ratio)
-midwest_new$group <- ifelse(midwest_new$ratio >=0.4872462, "large","small")
+midwest_new$group <- ifelse(midwest_new$ratio >= mean(midwest_new$ratio), "large","small")
 midwest_new$group
 table(midwest_new$group)
 library(ggplot2)
 qplot(midwest_new$group)
+
